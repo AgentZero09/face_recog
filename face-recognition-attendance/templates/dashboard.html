@@ -5,24 +5,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard</title>
+    <title>Dashboard | Face Attendance</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>Face Recognition Attendance Dashboard</h1>
+    <nav class="navbar">
 
-    <p>Welcome, Admin!</p>
+        <div class="logo">
+            Face Attendance
+        </div>
 
-    <br>
+        <a href="/logout" class="logout-btn">
+            Logout
+        </a>
 
-    <a href="/attendance">View Attendance</a>
+    </nav>
 
-    <br><br>
 
-    <a href="/logout">Logout</a>
+    <main class="dashboard">
+
+        <div class="welcome">
+
+            <h1>Dashboard</h1>
+
+            <p>
+                Welcome to the Face Recognition Attendance System
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <h3>Students</h3>
+                <p>0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Present Today</h3>
+                <p>0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Absent Today</h3>
+                <p>0</p>
+            </div>
+
+        </div>
+
+
+        <div class="actions">
+
+            <h2>Quick Actions</h2>
+
+            <div class="action-grid">
+
+                <a href="#" class="action-card">
+                    <span>📷</span>
+                    <h3>Register Student</h3>
+                    <p>Capture and register a student's face</p>
+                </a>
+
+
+                <a href="#" class="action-card">
+                    <span>🟢</span>
+                    <h3>Start Attendance</h3>
+                    <p>Start face recognition attendance</p>
+                </a>
+
+
+                <a href="/attendance" class="action-card">
+                    <span>📋</span>
+                    <h3>View Attendance</h3>
+                    <p>View attendance records and history</p>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
 
 </body>
 
