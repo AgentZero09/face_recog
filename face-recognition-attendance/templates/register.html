@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Register Student</h1>
+
+        <form method="POST">
+
+            <label>Student ID</label>
+            <input
+                type="text"
+                name="student_id"
+                placeholder="Enter Student ID"
+                required
+            >
+
+            <label>Student Name</label>
+            <input
+                type="text"
+                name="student_name"
+                placeholder="Enter Student Name"
+                required
+            >
+
+            <button type="submit">
+                Start Face Capture
+            </button>
+
+        </form>
+
+        <a href="{{ url_for('dashboard') }}">
+            Back to Dashboard
+        </a>
+
+    </div>
+
+</body>
+</html>

@@ -1,4 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+import os
+
+from src.face_capture import capture_faces
 
 app = Flask(__name__)
 
@@ -46,6 +49,32 @@ def attendance():
 
     return render_template("attendance.html")
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if not session.get("logged_in"):
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+
+        student_id = request.form["student_id"].strip()
+        student_name = request.form["student_name"].strip()
+
+        success = capture_faces(
+            student_id,
+            student_name,
+            number_of_images=20
+        )
+
+        if success:
+            return redirect(url_for("dashboard"))
+
+        return render_template(
+            "register.html",
+            error="Face capture was not completed."
+        )
+
+    return render_template("register.html")
 
 @app.route("/logout")
 def logout():

@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,13 +65,15 @@
 
             <div class="action-grid">
 
-                <a href="#" class="action-card">
+                <!-- Register Student -->
+                <a href="{{ url_for('register') }}" class="action-card">
                     <span>📷</span>
                     <h3>Register Student</h3>
                     <p>Capture and register a student's face</p>
                 </a>
 
 
+                <!-- Start Attendance -->
                 <a href="#" class="action-card">
                     <span>🟢</span>
                     <h3>Start Attendance</h3>
@@ -78,6 +81,7 @@
                 </a>
 
 
+                <!-- View Attendance -->
                 <a href="/attendance" class="action-card">
                     <span>📋</span>
                     <h3>View Attendance</h3>
@@ -93,3 +97,4 @@
 </body>
 
 </html>
+```
